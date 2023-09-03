@@ -1,6 +1,7 @@
 .TodoItem .text {
   cursor: pointer;
 }
+
 .TodoItem.done .text {
   color: #999999;
   text-decoration: line-through;

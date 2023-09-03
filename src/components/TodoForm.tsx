@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import { useTodosDispatch } from '../contexts/TodosContext';
+import React, { useState } from "react";
+import { Dispatch } from "react";
+import { useTodosDispatch } from "../contexts/TodosContext";
 
 function TodoForm() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const dispatch = useTodosDispatch();
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch({
-      type: 'CREATE',
-      text: value
+      type: "CREATE",
+      text: value,
     });
-    setValue('');
+    setValue("");
   };
 
   return (
     <form onSubmit={onSubmit}>
       <input
         value={value}
-        placeholder="What are you planning to do?"
-        onChange={e => setValue(e.target.value)}
+        placeholder="무엇을 하실건가요?"
+        onChange={(e) => setValue(e.target.value)}
       />
-      <button>Create</button>
+      <button>등록</button>
     </form>
   );
 }
-
 export default TodoForm;
